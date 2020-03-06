@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HMI Bahasa // UIN Malang</title>
+  <meta name="author" content="name">
+  <meta name="description" content="description here">
+  <meta name="keywords" content="keywords,here">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link href="/css/tailwind.min.css" rel="stylesheet">
+  <!--Replace with your tailwind.css once created-->
+  <!--Totally optional :) -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/img/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+  <link rel="manifest" href="/img/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"
+    integrity="sha256-xKeoJ50pzbUGkpQxDYHD7o7hxe0LaOGeguUidbq6vis=" crossorigin="anonymous"></script>
+  <style>
+    #sidebar {
+      overflow-x: auto;
+    }
+    
+    @media (min-width: 640px) {
+    table {
+      display: inline-table !important;
+    }
+    
+    thead tr:not(:first-child) {
+      display: none;
+    }
+  }
+  
+  td:not(:last-child) {
+    border-bottom: 0;
+  }
+
+  th:not(:last-child) {
+    border-bottom: 2px solid rgba(0, 0, 0, .1);
+  }
+  </style>
+
+</head>
+
+<body class="bg-gray-900 font-sans leading-normal tracking-normal mt-12">
+
+  <!--Nav-->
+  <nav id="header" class="bg-gray-900 fixed w-full z-20 top-0 shadow-lg">
+    <div class="w-full px-2 flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
+      <div class="w-1/2 pl-2 md:pl-0">
+        <a class="text-gray-100 text-base xl:text-xl no-underline hover:no-underline font-bold" href="#">
+          <span class="flex items-center"><img src="/img/logo_hmi.png" alt="" style="width: 20px;"> &nbsp; HMI Bahasa </span>
+        </a>
+      </div>
+      <div class="w-1/2 pr-0">
+        <div class="flex relative inline-block float-right">
+          <div class="relative text-sm text-gray-100">
+            <button id="userButton" class="flex items-center focus:outline-none mr-3">
+              <i class="fas fa-user-circle fa-2x mr-2"></i> <span
+                class="hidden md:inline-block text-gray-100">Hi, Fanan</span>
+              <svg class="pl-2 h-2 fill-current text-gray-100" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
+                <g>
+                  <path
+                    d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" />
+                </g>
+              </svg>
+            </button>
+            <div id="userMenu"
+              class="bg-gray-900 rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
+              <ul class="list-reset">
+                <li><a href="#"
+                    class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Pengaturan</a></li>
+                <li>
+                  <hr class="border-t mx-2 border-gray-400">
+                </li>
+                <li><a href="#"
+                    class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="flex flex-col md:flex-row">
+    <div class="bg-gray-900 shadow-lg h-16 fixed bottom-0 mt-12 md:relative md:h-screen z-10 w-full md:w-48" id="sidebar">
+      <div
+        class="md:mt-12 md:w-48 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
+        <ul class="list-reset flex flex-row md:flex-col py-0 md:py-3 px-1 md:px-2 text-center md:text-left mt-2">
+          <li class="flex-1">
+            <a href="/index.html"
+              class="block py-1 md:py-3 pl-1 mx-2 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-500">
+              <i class="fas fa-home pr-0 md:pr-3"></i><span
+                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Home</span>
+            </a>
+          </li>
+          <li class="flex-1">
+            <a href="../../Kepengurusan/index.html"
+              class="block py-1 md:py-3 pl-1 mx-2 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 border-green-500">
+              <i class="fas fa-address-card pr-0 md:pr-3 text-green-500"></i><span
+                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Kepengurusan</span>
+            </a>
+          </li>
+          <li class="flex-1">
+            <a href="../Buku/Data/index.html"
+              class="block py-1 md:py-3 pl-1 mx-2 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-500">
+              <i class="fa fa-book pr-0 md:pr-3"></i><span
+                class="pb-1 md:pb-0 text-xs md:text-base text-white md:text-white block md:inline-block">Buku</span>
+            </a>
+          </li>
+          <li class="flex-1">
+            <a href="../Keuangan/index.html"
+              class="block py-1 md:py-3 pl-1 mx-2 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-500">
+              <i class="fas fa-money-check-alt pr-0 md:pr-3"></i><span
+                class="pb-1 md:pb-0 text-xs md:text-base text-white md:text-white block md:inline-block">Keuangan</span>
+            </a>
+          </li>
+          <li class="flex-1">
+            <a href="../Presensi/index.html"
+              class="block py-1 md:py-3 pl-1 mx-2 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-500">
+              <i class="fas fa-chart-area pr-0 md:pr-3"></i><span
+                class="pb-1 md:pb-0 text-xs md:text-base text-white md:text-white block md:inline-block">Presensi</span>
+            </a>
+          </li>
+          <li class="flex-1">
+            <a href="../Surat/index.html"
+              class="block py-1 md:py-3 pl-1 mx-2 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-500">
+              <i class="fas fa-envelope pr-0 md:pr-3"></i><span
+                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Surat</span>
+            </a>
+          </li>
+          <li class="flex-1">
+            <a href="../Pengaturan/index.html"
+              class="block py-1 md:py-3 pl-1 mx-2 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-500">
+              <i class="fas fa-users-cog pr-0 md:pr-3"></i><span
+                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Pengaturan</span>
+            </a>
+          </li>
+          <li class="flex-1">
+            <a href="../Tentang/index.html"
+              class="block py-1 md:py-3 pl-1 mx-2 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-500">
+              <i class="far fa-question-circle pr-0 md:pr-3"></i><span
+                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Tentang</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-content flex-1 bg-gray-100 mt-6 md:mt-2 pb-24 md:pb-5">
+      <div class="bg-indigo-600 p-2 shadow text-xl text-white">
+        <h3 class="font-bold pl-2">Presensi</h3>
+      </div>
+      <div class="shadow p-4 border bg-white rounded w-full my-16 container mx-auto justify-center">
+        <div class="mt-4 flex justify-center md:justify-start sm:flex-auto px-4 wrap">
+          <a href="index.html" class="shadow rounded py-3 px-4 bg-orange-600 text-white font-bold text-lg shadow hover:bg-orange-500 cursor-pointer"><i class="fas fa-arrow-left"></i> Kembali</a>
+        </div>
+        <h2 class="font-bold text-2xl antialiased uppercase text-center mb-6 font-black mt-8">Update data pengurus</h2>
+        <div class="mx-2">
+          <form action="" method="POST" class="w-full max-w-lg mx-auto mb-10">
+            <div class="flex flex-wrap -mx-3 mb-4">
+              <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="nim">
+                  nim
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="nim" type="text" placeholder="Masukkan NIM">
+              </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-4">
+              <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="nama">
+                  nama
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="nama" type="text" placeholder="Masukkan nama">
+              </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-4">
+              <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="jurusan">
+                  jurusan
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="jurusan" type="text" placeholder="Masukkan jurusan">
+              </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-4">
+              <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="bidang">
+                  bidang
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="bidang" type="text" placeholder="Masukkan bidang">
+              </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-4">
+              <div class="w-full px-3">
+                <label class="w-max-sm tracking-wide px-4 py-2 rounded border border-indigo-600 font-bold hover:bg-indigo-700 hover:text-white cursor-pointer">
+                  <i class="fas fa-upload"></i>
+                  <span class="leading-normal">Upload Foto</span>
+                  <input type="file" class="hidden" id="inputFile" accept=".jpeg, .jpg, .png, .tiff" name="gambar">
+                </label>
+              </div>
+            </div>
+            <span class="outputName"></span>
+            <div class="mt-6 flex justify-center md:justify-start sm:flex-auto wrap">
+              <button type="submit" class="shadow rounded py-3 px-4 bg-yellow-500 text-white font-bold text-lg shadow hover:bg-yellow-400 cursor-pointer">Update</a>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script>
+    const outputName = document.querySelector('.outputName');
+
+    const inputFile = document.getElementById('inputFile');
+
+    outputName.textContent = `${inputFile.value}`;
+  </script>
+</body>
+
+</html>
